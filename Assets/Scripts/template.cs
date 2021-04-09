@@ -8,8 +8,6 @@ public class template : MonoBehaviour
 //ENDOF Interface implementation
 
 //protected hierarchy values
-
-
 //ENDOF protected hierarchy values
 
 //private variables
