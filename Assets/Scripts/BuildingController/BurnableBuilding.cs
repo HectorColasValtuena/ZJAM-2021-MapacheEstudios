@@ -27,30 +27,30 @@ public class BurnableBuilding :
 	} 
 
 	//changes intensity of the flames
-	public void ChangeVirulence (float fireVirulenceChange, bool ignoreDeltaTime = false)
+	public void ChangeVirulence (float fireVirulenceChange, bool applyDeltaTime = false)
 	{
 		//updates virulence appling time delta if not ignored
 		fireVirulence = Mathf.Clamp(
-			value: fireVirulence + (fireVirulenceChange * ((ignoreDeltaTime) ? 1.0f : Time.deltaTime)),
+			value: fireVirulence + (fireVirulenceChange * ((applyDeltaTime) ? Time.deltaTime : 1f)),
 			min: propagationResistance,
 			max: maximumVirulence
 		);
 	}
 //ENDOF IBurnable implementation
 
-//protected hierarchy values
+//protected hierarchy variables
   //Serialized values
-	[SerializeField]
+	//[SerializeField]
 	protected float propagationResistance = -0.1f;
-	[SerializeField]
-	protected float propagationChance = 0.1f;
-	[SerializeField]
-	protected float propagationRate = 0.1f;
-	[SerializeField]
+	//[SerializeField]
+	protected float propagationChance = 0.5f;
+	//[SerializeField]
+	protected float propagationRate = 0.25f;
+	//[SerializeField]
 	protected float propagationDistance = 3.0f;
-	[SerializeField]
+	//[SerializeField]
 	protected float virulenceGrowth = 0.1f;
-	[SerializeField]
+	//[SerializeField]
 	protected float maximumVirulence = 1f;
   //ENDOF Serialized values
 
@@ -58,11 +58,15 @@ public class BurnableBuilding :
 
 	[SerializeField]
 	protected float fireVirulence = 0.0f;
-//ENDOF protected hierarchy values
+//ENDOF protected hierarchy variables
 
 //private variables
+	[SerializeField]
+	private LayerMask burnableLayerMask;
+
 	private float propagationTimer = 0.0f;
 
+	private IBurnable[] burnableNeighbors;
 //ENDOF private variables
 
 
@@ -71,6 +75,8 @@ public class BurnableBuilding :
 	{
 		animator = GetComponent<Animator>();
 		fireVirulence = propagationResistance;
+
+		CacheBurnableNeightbors();
 	}
 
 	public void Update ()
@@ -91,15 +97,46 @@ public class BurnableBuilding :
 //ENDOF Protected hierarchy methods
 
 //private methods
+	private	void CacheBurnableNeightbors ()
+	{
+		RaycastHit[] hits = Physics.SphereCastAll(
+			origin: transform.position,
+			radius: propagationDistance,
+			direction: Vector3.up,
+			maxDistance: propagationDistance,
+			layerMask: burnableLayerMask
+			//queryTriggerInteraction:
+
+		);
+
+		List<IBurnable> burnables = new List<IBurnable>();
+
+		foreach (RaycastHit hit in hits)
+		{
+			if (hit.transform == this.transform) { continue; } //ignore oneself
+
+			IBurnable newBurnable = hit.transform.GetComponentInChildren<IBurnable>();
+
+			if (newBurnable != null)
+			{
+				burnables.Add(newBurnable);
+			}
+			else { Debug.LogError("CacheBurnableNeightbors: Found burnable with no IBurnable: " + hit.transform.name); }
+		}
+
+		burnableNeighbors = burnables.ToArray();
+		Debug.Log("Found " + burnableNeighbors.Length + " burnable neighbors");
+	}
+
 	private void UpdateVirulence()
 	{
 		if (isAblaze)
 		{
-			ChangeVirulence(virulenceGrowth);
+			ChangeVirulence(virulenceGrowth, true);
 		}
 		else 
 		{
-			ChangeVirulence(propagationResistance);
+			ChangeVirulence(propagationResistance, true);
 		}
 	}
 
@@ -113,10 +150,12 @@ public class BurnableBuilding :
 			{
 				PropagateFire();
 			}
+			/*
 			else
 			{
 				Debug.Log("No propagation");
 			}
+			//*/
 
 			propagationTimer -= propagationInterval;
 		}
@@ -135,6 +174,11 @@ public class BurnableBuilding :
 	private void PropagateFire ()
 	{
 		Debug.LogWarning(Random.value + " Propagating fire");
+
+		//choose a random target among nearby neighbors
+		IBurnable chosenTarget = burnableNeighbors[Random.Range(0, burnableNeighbors.Length)];
+
+		chosenTarget.ChangeVirulence(propagationRate * blazeIntensity);
 	}
 //ENDOF private methods 
 }

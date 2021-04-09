@@ -6,7 +6,12 @@ public class BurnableParticleEmitterController : MonoBehaviour
 	[SerializeField]
 	private float maximumEmissionRate = 20f;
 
+	[SerializeField]
+	private Transform burnableTransform;
+
 	private IBurnable burnable;
+
+	[SerializeField]
 	private ParticleSystem particleEmitter;
 	private ParticleSystem.EmissionModule emissionController;
 //ENDOF private variables
@@ -18,12 +23,11 @@ public class BurnableParticleEmitterController : MonoBehaviour
 //MonoBehaviour lifecycle
 	public void Awake ()
 	{
-		burnable = transform.root.GetComponentInChildren<IBurnable>();
+		burnable = burnableTransform.GetComponent<IBurnable>();
 		if (burnable == null) { Debug.LogError("BurnableParticleEmitter missing burnable: " + gameObject.name); }
 
 		particleEmitter = transform.GetComponent<ParticleSystem>();
 		if (particleEmitter == null) { Debug.LogError("BurnableParticleEmitter missing particleSystem: " + gameObject.name); }
-
 		emissionController = particleEmitter.emission;
 	}
 
