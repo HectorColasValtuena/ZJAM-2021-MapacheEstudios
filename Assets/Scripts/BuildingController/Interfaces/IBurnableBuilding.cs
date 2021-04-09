@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IBurnableBuilding
+public interface IBurnable
 {
 	bool isAblaze {get;}	//True if building is in flames
 

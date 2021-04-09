@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DestructableBuilding :
 	BurnableBuilding,
-	IDestructableBuilding
+	IDestructable
 {
-//IDestructableBuilding
-	public	bool isDestroyed { get { return false; }}
-//ENDOF IDestructableBuilding
+//IDestructable
+	public bool isDestroyed { get { return false; }}
+//ENDOF IDestructable
 }

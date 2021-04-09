@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BurnableBuilding :
 	BuildingBase,
-	IBurnableBuilding
+	IBurnable
 {
 //Constants
 	//every how many seconds should a burning building attempt propagation
 	private const float propagationInterval = 1.0f;
 //ENDOF Constants
 
-//IBurnableBuilding implementation
+//IBurnable implementation
 	//True if building is in flames
 	public bool isAblaze { get { return fireVirulence > 0; }}
 
@@ -36,7 +36,7 @@ public class BurnableBuilding :
 			max: maximumVirulence
 		);
 	}
-//ENDOF IBurnableBuilding implementation
+//ENDOF IBurnable implementation
 
 //protected hierarchy values
   //Serialized values

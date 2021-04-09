@@ -1,4 +1,4 @@
-﻿public interface IDestructableBuilding : IBurnableBuilding
+﻿public interface IDestructable : IBurnable
 {
     bool isDestroyed {get;}
 }
