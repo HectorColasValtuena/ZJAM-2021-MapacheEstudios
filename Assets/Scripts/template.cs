@@ -13,6 +13,8 @@ public class template : MonoBehaviour
 //private variables
 //ENDOF private variables
 
+//private fields
+//ENDOF private fields
 
 //MonoBehaviour lifecycle
 //ENDOF MonoBehaviour lifecycle
