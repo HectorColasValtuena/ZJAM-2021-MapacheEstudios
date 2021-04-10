@@ -21,7 +21,7 @@ public class BurnableBuilding :
 		get
 		{
 			return (isAblaze)
-				? fireVirulence / maximumVirulence
+				? fireVirulence //fireVirulence / maximumVirulence
 				: 0.0f;
 		}
 	} 
@@ -40,17 +40,17 @@ public class BurnableBuilding :
 
 //protected hierarchy variables
   //Serialized values
-	//[SerializeField]
+	[SerializeField]
 	protected float propagationResistance = -0.1f;
-	//[SerializeField]
+	[SerializeField]
 	protected float propagationChance = 0.15f;
-	//[SerializeField]
+	[SerializeField]
 	protected float propagationRate = 0.25f;
-	//[SerializeField]
+	[SerializeField]
 	protected float propagationDistance = 3.0f;
-	//[SerializeField]
+	[SerializeField]
 	protected float virulenceGrowth = 0.1f;
-	//[SerializeField]
+	[SerializeField]
 	protected float maximumVirulence = 1f;
   //ENDOF Serialized values
 
@@ -79,7 +79,7 @@ public class BurnableBuilding :
 		CacheBurnableNeightbors();
 	}
 
-	public void Update ()
+	public virtual void Update ()
 	{
 		ProcessFire();
 	}

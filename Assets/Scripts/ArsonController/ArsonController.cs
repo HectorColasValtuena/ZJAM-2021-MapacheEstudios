@@ -12,7 +12,7 @@ public class ArsonController : MonoBehaviour
 	private const float radiusIncrease = 0.25f;	//radius increase per interval
 	private const float frequencyIncrease = 1f;	//arson incidence per interval
 	private const float additionalFireIncrease = 1.5f;
-	private const float baseInterval = 60f;		//interval length in seconds
+	private const float baseInterval = 10f;		//interval length in seconds
 //ENDOF Constants
 
 //private properties
@@ -35,6 +35,12 @@ public class ArsonController : MonoBehaviour
 //ENDOF private variables
 
 //MonoBehaviour lifecycle
+	public void Awake ()
+	{
+		Arson(FindArsonTarget());
+		Arson(FindArsonTarget());
+	}
+
 	public void Update ()
 	{
 		UpdateInterval();
@@ -90,10 +96,12 @@ public class ArsonController : MonoBehaviour
 
 	private void Arson (IBurnable target)
 	{
+		Debug.LogWarning("Arson: " + target.transform.name);
 		Ignite(target);
+		Instantiate(original: explosionPrefab, position: target.transform.position, rotation: Quaternion.identity);
 
 		float gasLeft = additionalFires;
-		IBurnable[] burnables = FindBurnablesAroundPoint(target.transform.position);
+		IBurnable[] burnables = BurnableCache.FindBurnablesAroundPoint(target.transform.position, currentRadius);
 
 		while (gasLeft >= 0)
 		{
@@ -101,38 +109,13 @@ public class ArsonController : MonoBehaviour
 			{
 				Ignite(burnables[Random.Range(0, burnables.Length)]);
 			}
+			gasLeft--;
 		}
 	}
 
 	private void Ignite (IBurnable target)
-	{target.ChangeVirulence(arsonVirulence);}
+	{ target.ChangeVirulence(arsonVirulence); }
 
-	private	IBurnable[] FindBurnablesAroundPoint (Vector3 center)
-	{
-		RaycastHit[] hits = Physics.SphereCastAll(
-			origin: center,
-			radius: currentRadius,
-			direction: Vector3.up,
-			maxDistance: currentRadius,
-			layerMask: burnableLayerMask,
-			queryTriggerInteraction: QueryTriggerInteraction.Collide
-
-		);
-
-		List<IBurnable> burnables = new List<IBurnable>();
-
-		foreach (RaycastHit hit in hits)
-		{
-			IBurnable foundBurnable = hit.transform.GetComponentInChildren<IBurnable>();
-
-			if (foundBurnable != null)
-			{
-				burnables.Add(foundBurnable);
-			}
-			else { Debug.LogError("CacheBurnableNeightbors: Found burnable with no IBurnable: " + hit.transform.name); }
-		}
-
-		return burnables.ToArray();
-	}
+	
 //ENDOF private methods
 }
