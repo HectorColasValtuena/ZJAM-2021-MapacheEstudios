@@ -52,6 +52,6 @@ public class PlayerMovementController : MonoBehaviour
 
     	Vector2 movementVector = velocity * currentMoveSpeed;
 
-    	transform.Translate(new Vector3(x: movementVector.x, y: 0, z: movementVector.y));
+    	transform.Translate(new Vector3(x: movementVector.x, y: 0, z: movementVector.y), Space.World);
     }
 }
