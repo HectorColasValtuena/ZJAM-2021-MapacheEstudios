@@ -6,14 +6,22 @@ public class WaterShotController : MonoBehaviour
 {
 //constants
 	private const float minYPosition = -0.5f;
+
 //ENDOF constants
 
 //private fields
 	[SerializeField]
-	private GameObject hitEffectPrefab;
+	private float dousingRadius = 2f;
+	[SerializeField]
+	private float dousingPower = -0.6f;
+
+	
+	[SerializeField]
+	private LayerMask collidableLayerMask;
 
 	[SerializeField]
-	private float dousingPower = 0.4f;
+	private GameObject hitEffectPrefab;
+
 //ENDOF private fields
 
 //MonoBehaviour lifecycle
@@ -22,11 +30,17 @@ public class WaterShotController : MonoBehaviour
 		CheckOutOfBounds();
 	}
 
+	/*
 	public void OnTriggerEnter (Collider collider)
 	{
 		Debug.Log("Trigger Enter");
 		IBurnable burnable = collider.GetComponent<IBurnable>();
 		Hit(burnable);
+	}
+	//*/
+	public void OnCollisionEnter (Collision collision)
+	{
+		Hit(collision.GetContact(0).point);
 	}
 //ENDOF MonoBehaviour lifecycle
 
@@ -39,28 +53,46 @@ public class WaterShotController : MonoBehaviour
 		}
 	}
 
-	private void Hit (IBurnable burnable)
+	private void Hit (Vector3 position)
 	{
-		if (burnable == null) 
+		RaycastHit[] hits = Physics.SphereCastAll(
+			origin: position,
+			radius: dousingRadius,
+			direction: Vector3.up,
+			maxDistance: dousingRadius,
+			layerMask: collidableLayerMask
+			//queryTriggerInteraction: QueryTriggerInteraction.Collide
+		);
+
+		
+		foreach (RaycastHit hit in hits)
 		{
-			Debug.LogError("waterShot hit didn't find IBurnable");
-			return;
+			//if (hit.transform == this.transform) { continue; } //ignore oneself
+
+			IBurnable burnable = hit.transform.GetComponentInChildren<IBurnable>();
+
+			if (burnable != null)
+			{
+				Douse(burnable);
+			}
 		}
-
-Debug.LogWarning("WaterHit");
-
-		burnable.ChangeVirulence(dousingPower);
 
 		if (hitEffectPrefab != null)
 		{
 			Instantiate(
 				original: hitEffectPrefab,
-				position: transform.position,
+				position: position,
 				rotation: Quaternion.identity	//Random.rotation
 			);
 		}
 
 		Destroy(gameObject);
+	}
+
+	private void Douse (IBurnable burnable)
+	{
+		burnable.ChangeVirulence(dousingPower);
+
 	}
 //ENDOF private methods
 }

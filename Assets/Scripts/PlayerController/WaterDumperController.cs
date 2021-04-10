@@ -10,9 +10,9 @@ public class WaterDumperController :
 	private const string animatorTrigger_WaterEmpty = "WaterEmpty";
 
 	//[SerializeField]
-	private const int maximumCharges = 30;	//maximum water charge
+	private const int maximumCharges = 180;	//maximum water charge
 	//[SerializeField]
-	private const float shotInterval = 1/6;	//Time between shots
+	private const float shotInterval = .125f;	//Time between shots
 //ENDOF Constants
 
 
@@ -87,6 +87,7 @@ public class WaterDumperController :
 				rotation: Quaternion.identity	//Random.rotation
 			);
 			availableCharges--;
+			shotTimer = 0;// shotInterval;
 		}
 		else {
 			animator.SetTrigger(animatorTrigger_WaterEmpty);
