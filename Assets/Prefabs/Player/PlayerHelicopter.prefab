@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319767980}
+  - component: {fileID: 893319562}
   m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 1715820601071823592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &893319562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319767979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140e43516445d1a4986a6029f26307c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootTransform: {fileID: 1715820601071823592}
 --- !u!1 &636974467
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,13 +102,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498102361}
-  m_LocalRotation: {x: -0.5187448, y: -0.518745, z: 0.48052442, w: 0.48052448}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319767980}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -94.381, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
 --- !u!33 &1498102365
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -368,13 +382,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684477551}
-  m_LocalRotation: {x: -0.5187448, y: -0.518745, z: 0.48052442, w: 0.48052448}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0.36, z: -1.23}
   m_LocalScale: {x: 0.2, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 319767980}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -94.381, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
 --- !u!33 &1684477555
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -450,6 +464,7 @@ GameObject:
   - component: {fileID: 3793662559299295642}
   - component: {fileID: 3793662559299295643}
   - component: {fileID: 3793662559299295641}
+  - component: {fileID: 5633838478324769889}
   m_Layer: 10
   m_Name: PlayerHelicopter
   m_TagString: Untagged
@@ -523,6 +538,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &5633838478324769889
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851309671082044230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4641868379911846891
 PrefabInstance:
   m_ObjectHideFlags: 0
