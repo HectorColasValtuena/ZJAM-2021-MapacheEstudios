@@ -12,7 +12,7 @@ public class ArsonController : MonoBehaviour
 	private const float radiusIncrease = 0.25f;	//radius increase per interval
 	private const float frequencyIncrease = 1f;	//arson incidence per interval
 	private const float additionalFireIncrease = 1.5f;
-	private const float baseInterval = 10f;		//interval length in seconds
+	private const float baseInterval = 30f;		//interval length in seconds
 //ENDOF Constants
 
 //private properties

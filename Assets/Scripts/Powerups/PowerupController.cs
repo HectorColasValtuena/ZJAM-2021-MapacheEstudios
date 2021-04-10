@@ -5,8 +5,8 @@ using UnityEngine;
 public class PowerupController : MonoBehaviour, IPowerupController
 {
 //Constants
-	private const float turboLength = 30f;
-	private const float waterLength = 30f;
+	private const float turboLength = 20f;
+	private const float waterLength = 20f;
 //ENDOF Constants
 
 	public static IPowerupController instance;

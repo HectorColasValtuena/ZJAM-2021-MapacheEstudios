@@ -3,6 +3,7 @@
 public abstract class PowerupBase : MonoBehaviour, IPowerup
 {
 	public GameObject particlePrefab;
+	public GameObject explosionPrefab;
 
 //IPowerup
 	public void Activate ()
@@ -12,6 +13,15 @@ public abstract class PowerupBase : MonoBehaviour, IPowerup
 		if (particlePrefab != null)
 		{
 			Instantiate(particlePrefab, transform.position, Quaternion.identity);
+		}
+		Destroy(gameObject);
+	}
+
+	public void Destroy ()
+	{
+		if (explosionPrefab != null)
+		{
+			Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 		}
 		Destroy(gameObject);
 	}

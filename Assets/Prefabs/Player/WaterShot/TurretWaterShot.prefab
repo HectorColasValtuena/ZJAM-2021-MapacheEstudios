@@ -50,11 +50,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dousingRadius: 2
-  dousingPower: -0.4
+  dousingPower: -0.6
   collidableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  hitEffectPrefab: {fileID: 3161607704645702955, guid: 2c63a3ef635d6fd469767a18bb6df3bd, type: 3}
+  hitEffectPrefab: {fileID: 0}
 --- !u!199 &8143692925807062661
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4889,5 +4889,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a93ce859ae66af4fba20ad2c3e1c6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 0, y: 0, z: 10}
-  randomForce: {x: 0, y: 0, z: 50}
+  force: {x: 0, y: 0, z: 20}
+  randomForce: {x: 0, y: 0, z: 40}
