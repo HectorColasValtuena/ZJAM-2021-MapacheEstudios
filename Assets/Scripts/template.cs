@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class template : MonoBehaviour
 {
+//Constants
+//ENDOF Constants
+
 //Interface implementation
 //ENDOF Interface implementation
 
