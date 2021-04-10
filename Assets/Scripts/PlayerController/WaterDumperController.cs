@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterDumperController : MonoBehaviour
+public class WaterDumperController :
+	MonoBehaviour,
+	IWaterDumperController
 {
 //Constants
 	private const string animatorTrigger_WaterEmpty = "WaterEmpty";
@@ -36,12 +38,19 @@ public class WaterDumperController : MonoBehaviour
 	private int _availableCharges;
 //ENDOF private variables
 
+//Interface implementation
+	void IWaterDumperController.Reload ()	//reloads water reservoir
+	{
+		this.Reload();
+	}
+//ENDOF Interface implementation
+
 //MonoBehaviour lifecycle
 	public void Awake ()
 	{
 		animator = GetComponent<Animator>();
 
-		availableCharges = maximumCharges;
+		Reload();
 	}
 
 	public void Update ()
@@ -51,6 +60,11 @@ public class WaterDumperController : MonoBehaviour
 //ENDOF MonoBehaviour lifecycle
 
 //private methods
+	private void Reload ()
+	{
+		availableCharges = maximumCharges;
+	}
+
 	private void UpdateShooting ()
 	{
 		if (shotReady && shotInput)

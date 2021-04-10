@@ -7,6 +7,9 @@ public class template : MonoBehaviour
 //Constants
 //ENDOF Constants
 
+//static space
+//ENDOF static space
+
 //Interface implementation
 //ENDOF Interface implementation
 
@@ -16,8 +19,8 @@ public class template : MonoBehaviour
 //private variables
 //ENDOF private variables
 
-//private fields
-//ENDOF private fields
+//private properties
+//ENDOF private properties
 
 //MonoBehaviour lifecycle
 //ENDOF MonoBehaviour lifecycle

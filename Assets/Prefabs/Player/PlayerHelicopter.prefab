@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319767980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 636974468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaterOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 1498102365}
   - component: {fileID: 1498102364}
   - component: {fileID: 1498102363}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 8984707061704325802}
   - component: {fileID: 1652169601}
   - component: {fileID: 1652169603}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaterEmptyEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 1684477555}
   - component: {fileID: 1684477554}
   - component: {fileID: 1684477553}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 3793662559299295642}
   - component: {fileID: 3793662559299295643}
   - component: {fileID: 3793662559299295641}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerHelicopter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,6 +577,10 @@ PrefabInstance:
     - target: {fileID: 8416930070029752503, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
       propertyPath: m_Name
       value: halito
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416930070029752503, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
