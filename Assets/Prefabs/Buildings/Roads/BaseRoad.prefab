@@ -4971,7 +4971,7 @@ MonoBehaviour:
   burnableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  hitPoints: 100
+  hitPoints: 50
   explosionVirulence: 0
   explosionTargetCount: 0
   explosionRadius: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PowerupSpawner : MonoBehaviour
 {
-	private const float minimumInterval = 1f;
-	private const float maximumInterval = 2f;
+	private const float minimumInterval = 5f;
+	private const float maximumInterval = 35f;
 
 	[SerializeField]
 	private PowerupBase[] basicPowerups;
