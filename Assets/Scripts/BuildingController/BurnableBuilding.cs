@@ -43,7 +43,7 @@ public class BurnableBuilding :
 	//[SerializeField]
 	protected float propagationResistance = -0.1f;
 	//[SerializeField]
-	protected float propagationChance = 0.5f;
+	protected float propagationChance = 0.15f;
 	//[SerializeField]
 	protected float propagationRate = 0.25f;
 	//[SerializeField]
@@ -104,8 +104,8 @@ public class BurnableBuilding :
 			radius: propagationDistance,
 			direction: Vector3.up,
 			maxDistance: propagationDistance,
-			layerMask: burnableLayerMask
-			//queryTriggerInteraction:
+			layerMask: burnableLayerMask,
+			queryTriggerInteraction: QueryTriggerInteraction.Collide
 
 		);
 
@@ -173,7 +173,7 @@ public class BurnableBuilding :
 
 	private void PropagateFire ()
 	{
-		Debug.LogWarning(Random.value + " Propagating fire");
+		//Debug.LogWarning(Random.value + " Propagating fire");
 
 		//choose a random target among nearby neighbors
 		IBurnable chosenTarget = burnableNeighbors[Random.Range(0, burnableNeighbors.Length)];
