@@ -11,7 +11,7 @@ public class WaterTowerController : MonoBehaviour
 //ENDOF Constants
 
 //static space
-	private bool freeReload { get { return false; }}
+	private bool freeReload { get { return PowerupController.instance.water; }}
 //ENDOF static space
 
 //private variables
@@ -49,7 +49,10 @@ public class WaterTowerController : MonoBehaviour
 //private methods
 	private void UpdateReloadTimer ()
 	{
+		if (freeReload) { timer = reloadTime; }
+
 		timer += Time.deltaTime;
+
 		if (isFull) { animator.SetBool(animation_bool_waterFull, true); }
 	}
 

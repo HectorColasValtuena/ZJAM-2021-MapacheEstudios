@@ -10,27 +10,14 @@ public class PlayerMovementController : MonoBehaviour
 	private Vector2 velocity;
 
 	//acceleration for this frame
-	private float currentAcceleration { get { return maxAcceleration * Time.deltaTime; }}
+	private float currentAcceleration { get { return maxAcceleration * Time.deltaTime ; }} //* moveSpeedModifier; }}
 	//speed for this frame
-	private float currentMoveSpeed 
-	{
-		get
-		{
-			return maxMoveSpeed * Time.deltaTime * moveSpeedModifier;
-		}
-	}
+	private float currentMoveSpeed { get { return maxMoveSpeed * Time.deltaTime * moveSpeedModifier; }}
 	private float moveSpeedModifier 
 	{
-		get
-		{
 			//if movement powerup return movement powerup speed
-			return (turboOn)? 2.0f : 1.0f;
-		}
+		get{ return (PowerupController.instance.turbo)? 2.0f : 1.0f; }
 	}
-
-	//!!!!!!!!!Hack for movespeed
-	[SerializeField]
-	private bool turboOn = false;
 
 	public void Awake ()
 	{

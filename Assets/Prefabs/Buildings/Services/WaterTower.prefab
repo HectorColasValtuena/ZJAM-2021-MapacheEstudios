@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1102050409848605748}
   - component: {fileID: 4649603110284722943}
   - component: {fileID: 3613197837867903510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PickUpEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4978,7 +4978,7 @@ GameObject:
   - component: {fileID: 8950168409709849865}
   - component: {fileID: 8950168409709849867}
   - component: {fileID: 8950168409709849866}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5059,7 +5059,9 @@ GameObject:
   - component: {fileID: 8950168410043693189}
   - component: {fileID: 8950168410043693188}
   - component: {fileID: 8950168410043693190}
-  m_Layer: 0
+  - component: {fileID: 102899312}
+  - component: {fileID: 102899311}
+  m_Layer: 11
   m_Name: WaterTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5090,7 +5092,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8950168410043693187}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 10, z: 0.5}
@@ -5114,6 +5116,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &102899312
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950168410043693187}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &102899311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950168410043693187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34af462ac5b1da44b3d07ee3d71033f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8950168410141458667
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,7 +5155,7 @@ GameObject:
   - component: {fileID: 8950168410141458668}
   - component: {fileID: 8950168410141458670}
   - component: {fileID: 8950168410141458669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EmptyEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5219,7 +5249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8950168410447635571}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5252,7 +5282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8950168410993527492}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5285,7 +5315,7 @@ GameObject:
   - component: {fileID: 8950168411212936139}
   - component: {fileID: 8950168411212936141}
   - component: {fileID: 8950168411212936140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FullEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5429,6 +5459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: halito
       objectReference: {fileID: 0}
+    - target: {fileID: 8416930070029752503, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
 --- !u!4 &647273640476235996 stripped
@@ -5502,6 +5536,10 @@ PrefabInstance:
     - target: {fileID: 8416930070029752503, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
       propertyPath: m_Name
       value: halito
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416930070029752503, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1458d2fcce76e804a9e589bb14aead86, type: 3}

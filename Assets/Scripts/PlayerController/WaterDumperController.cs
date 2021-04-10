@@ -36,6 +36,8 @@ public class WaterDumperController :
 	}
 	[SerializeField]
 	private int _availableCharges;
+
+	private bool freeReload { get { return PowerupController.instance.water; }}
 //ENDOF private variables
 
 //Interface implementation
@@ -56,6 +58,7 @@ public class WaterDumperController :
 	public void Update ()
 	{
 		UpdateShooting();
+		if (freeReload) { Reload(); }
 	}
 //ENDOF MonoBehaviour lifecycle
 
