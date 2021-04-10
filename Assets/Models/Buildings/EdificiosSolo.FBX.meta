@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: edb480ec6f4cb5b40801fa7a19f008df
+guid: 3a86101a499e72b41a2f2f6300cbaf73
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #11
+    second: {fileID: 2100000, guid: 5481f07036e56a24fb53e493be7b9177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: ce3fcce5e7ecdcf498532aa184970b36, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: edificios1
+    second: {fileID: 2800000, guid: a77662b3ef5b7354cb6948a278cdd446, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
