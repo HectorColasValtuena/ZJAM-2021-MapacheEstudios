@@ -52,7 +52,7 @@ MonoBehaviour:
   dousingPower: -0.6
   collidableLayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   hitEffectPrefab: {fileID: 3161607704645702955, guid: 2c63a3ef635d6fd469767a18bb6df3bd, type: 3}
 --- !u!199 &8143692925807062661
 ParticleSystemRenderer:
@@ -543,7 +543,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -596,7 +596,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -649,8 +649,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -700,7 +700,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    randomizeRotationDirection: 0
+    randomizeRotationDirection: 0.5
     maxNumParticles: 1000
     size3D: 0
     rotation3D: 0

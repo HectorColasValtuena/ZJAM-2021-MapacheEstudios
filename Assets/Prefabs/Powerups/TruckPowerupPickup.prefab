@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d52e8ebcb840b0543894c5c54b82ccb8, type: 2}
+  - {fileID: 2100000, guid: 256451a8ad97f104a869b2f703fe1e78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,10 +91,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7287812797136114896}
   - component: {fileID: 7718209325389780521}
-  - component: {fileID: 4539997610927746956}
+  - component: {fileID: 8453940583204011912}
   - component: {fileID: 1898112553}
   m_Layer: 11
-  m_Name: WaterPowerup
+  m_Name: TruckPowerupPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4539997610927746956
+--- !u!114 &8453940583204011912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,10 +137,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3032166326611243199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc759ae9eac8754abcca2baf3307001, type: 3}
+  m_Script: {fileID: 11500000, guid: 16375c6b511045a489dc00ef14af0e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 3161607704645702955, guid: 2c63a3ef635d6fd469767a18bb6df3bd, type: 3}
+  particlePrefab: {fileID: 0}
 --- !u!54 &1898112553
 Rigidbody:
   m_ObjectHideFlags: 0
