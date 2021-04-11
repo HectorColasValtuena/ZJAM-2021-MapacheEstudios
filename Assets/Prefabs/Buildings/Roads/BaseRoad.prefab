@@ -978,7 +978,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4964,7 +4964,7 @@ MonoBehaviour:
   propagationResistance: -0.1
   propagationChance: 0.1
   propagationRate: 0.1
-  propagationDistance: 2
+  propagationDistance: 1
   virulenceGrowth: 0.05
   maximumVirulence: 0.5
   fireVirulence: 0

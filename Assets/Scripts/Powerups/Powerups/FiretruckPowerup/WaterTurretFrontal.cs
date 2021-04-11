@@ -18,5 +18,6 @@ public class WaterTurretFrontal : MonoBehaviour
     	shotTimer += Time.deltaTime;
     	if (shotTimer < shotInterval) { return; }
     	Instantiate(shotPrefab, barrel.position, barrel.rotation);
+        shotTimer = 0;
     }
 }
