@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7718209325389780521}
   - component: {fileID: 8453940583204011912}
   - component: {fileID: 1898112553}
-  - component: {fileID: 680648693}
   m_Layer: 11
   m_Name: TruckPowerup[Pickup]
   m_TagString: Untagged
@@ -78,25 +77,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &680648693
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3032166326611243199}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e5b56fd68e3e78c4995295921b41da2e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5381563725258613400
 GameObject:
   m_ObjectHideFlags: 0
