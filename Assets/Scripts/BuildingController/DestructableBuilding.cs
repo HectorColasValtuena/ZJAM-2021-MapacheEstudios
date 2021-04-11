@@ -28,7 +28,7 @@ public class DestructableBuilding :
 //ENDOF protected fields
 
 //IDestructable
-	public bool isDestroyed { get { return false; }}
+	public bool isDestroyed { get { return exploded; }}
 //ENDOF IDestructable
 
 //private fields

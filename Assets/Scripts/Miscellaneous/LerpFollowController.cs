@@ -3,7 +3,7 @@
 public class LerpFollowController : MonoBehaviour
 {
 	[SerializeField]
-	private Transform followTarget;
+	public Transform followTarget;
 
 	private float lerpRate = 0.05f;
 

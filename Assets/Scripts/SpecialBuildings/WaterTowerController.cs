@@ -7,7 +7,7 @@ public class WaterTowerController : MonoBehaviour
 //Constants
 	private const string animation_bool_waterFull = "WaterFull";
 	private const string animation_trigger_used = "Used";
-	private const float reloadTime = 5f;
+	private const float reloadTime = 15f;
 //ENDOF Constants
 
 //static space
