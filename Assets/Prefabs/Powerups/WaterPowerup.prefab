@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc759ae9eac8754abcca2baf3307001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 3161607704645702955, guid: 2c63a3ef635d6fd469767a18bb6df3bd, type: 3}
+  particlePrefab: {fileID: 3161607704645702955, guid: ad805be0d01208d40a99d236ccd8fbe0, type: 3}
   explosionPrefab: {fileID: 0}
 --- !u!54 &1898112553
 Rigidbody:

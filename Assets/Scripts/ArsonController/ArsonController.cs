@@ -37,8 +37,13 @@ public class ArsonController : MonoBehaviour
 //MonoBehaviour lifecycle
 	public void Awake ()
 	{
-		//Arson(FindArsonTarget());
-		//Arson(FindArsonTarget());
+		StartCoroutine(InitialArson());
+	}
+
+	private IEnumerator InitialArson ()
+	{
+		yield return new WaitForSeconds(1f);
+		Arson(FindArsonTarget());
 	}
 
 	public void Update ()
