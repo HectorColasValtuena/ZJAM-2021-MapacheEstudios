@@ -44,6 +44,7 @@ public class DestructableBuilding :
 	{
 		base.Update();
 		UpdateHitPoints();
+		UpdateScore();
 	}
 
 //private methods
@@ -91,5 +92,28 @@ public class DestructableBuilding :
 
 	private void Ignite (IBurnable target)
 	{ target.ChangeVirulence(explosionVirulence); }
+
+    private IEnumerator ScoringLoop ()
+    {
+    	yield return new WaitForSeconds(1f);
+    	while (!isDestroyed)
+    	{
+    		yield return new WaitForSeconds(1f);
+    		UpdateScore();
+    	}
+    }
+
+    private const float scoreInterval = 1f;
+    private float scoreTimer = 0;
+    private void UpdateScore ()
+    {
+    	if (isDestroyed) { return; }
+    	scoreTimer += Time.deltaTime;
+    	if (scoreTimer >= scoreInterval)
+    	{
+    		scoreTimer -= scoreInterval;
+    		ScoreCounter.ScoreGain();
+    	}
+    }
 //private methods
 }

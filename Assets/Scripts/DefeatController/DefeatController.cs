@@ -8,7 +8,7 @@ public class DefeatController : MonoBehaviour
 
 	public LerpFollowController cameraController;
 
-	private bool defeated = false;
+	public static bool defeated = false;
 
 	    // Update is called once per frame
     void Update()
